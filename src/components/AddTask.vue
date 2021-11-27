@@ -35,8 +35,8 @@ export default {
   methods: {
     onSubmit (e) {
       e.preventDefault()
-      if (!this.text) {
-        alert('Please add a task')
+      if (!this.text || !this.day) {
+        alert('Please fill in empty field.')
         return
       }
 
