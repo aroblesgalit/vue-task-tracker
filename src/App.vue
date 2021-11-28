@@ -55,6 +55,11 @@ export default {
       const res = await fetch('http://localhost:3000/tasks')
       const data = res.json()
       return data
+    },
+    async fetchTask (id) {
+      const res = await fetch(`http://localhost:3000/tasks/${id}`)
+      const data = res.json()
+      return data
     }
   },
   async created () {
