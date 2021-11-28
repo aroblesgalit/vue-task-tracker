@@ -52,12 +52,12 @@ export default {
       )
     },
     async fetchTasks () {
-      const res = await fetch('http://localhost:3000/tasks')
+      const res = await fetch('api/tasks')
       const data = res.json()
       return data
     },
     async fetchTask (id) {
-      const res = await fetch(`http://localhost:3000/tasks/${id}`)
+      const res = await fetch(`api/tasks/${id}`)
       const data = res.json()
       return data
     }
