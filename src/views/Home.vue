@@ -1,7 +1,5 @@
 <template>
-  <div v-show="showAddTask">
-    <AddTask @add-task="addTask" />
-  </div>
+  <AddTask v-show="showAddTask" @add-task="addTask" />
   <Tasks
     @toggle-reminder="toggleReminder"
     @delete-task="deleteTask"
@@ -74,10 +72,10 @@ export default {
       const res = await fetch(`api/tasks/${id}`)
       const data = res.json()
       return data
-    },
-    async created () {
-      this.tasks = await this.fetchTasks()
     }
+  },
+  async created () {
+    this.tasks = await this.fetchTasks()
   }
 }
 </script>
